@@ -9,6 +9,18 @@ public class Music {
     }
 
     public Integer selection(Integer startIndex, String selection){
-        return null;
+        int counter = 0;
+        for (int i = 0, playlistLength = playList.length; i < playlistLength; i++){
+            if (playList[i].equalsIgnoreCase(selection))
+            {
+                counter = i-startIndex;
+            }
+            if (counter > 2)
+            {
+                counter = playlistLength-counter;
+            }
+        }
+
+        return counter;
     }
 }
